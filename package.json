@@ -1,0 +1,31 @@
+{
+  "name": "garmin-claude-connector",
+  "description": "Your own Garmin data in Claude: a private, password-protected MCP connector on Cloudflare Workers using Garmin's Personal API key.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "1.2.4",
+    "garmin-personal-mcp": "0.1.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  },
+  "cloudflare": {
+    "bindings": {
+      "GARMIN_PERSONAL_API_KEY": {
+        "description": "Your Garmin **Personal API key**. Create one in Garmin Connect under [Settings → Personal API token](https://connect.garmin.com/app/settings/personalApiToken)."
+      },
+      "LOGIN_PASSWORD": {
+        "description": "A **new, long password** (20+ characters) that you invent now. You type it once when connecting Claude. Save it in your password manager."
+      },
+      "OAUTH_KV": {
+        "description": "Storage for login sessions. Created automatically, leave as is."
+      }
+    }
+  }
+}
