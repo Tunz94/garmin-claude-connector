@@ -23,6 +23,7 @@ No computer setup is needed. Everything works in a browser, even on a phone.
 
 1. **Create your Garmin key.** In Garmin Connect, go to **Settings → Personal API token** ([direct link](https://connect.garmin.com/app/settings/personalApiToken)) and create a key. Keep it private.
 2. **Click "Deploy to Cloudflare"** above. Sign in to Cloudflare and GitHub when asked. Then fill in:
+   - **Git account:** pick your GitHub account and tick **Create private Git repository**
    - `GARMIN_PERSONAL_API_KEY`: the key from step 1
    - `LOGIN_PASSWORD`: a **new** long password that you invent now (20+ characters). Save it in your password manager.
    - Leave everything else as it is, and click **Deploy**.

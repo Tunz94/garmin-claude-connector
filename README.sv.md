@@ -23,6 +23,7 @@ Ingen installation på datorn behövs. Allt görs i webbläsaren, även på mobi
 
 1. **Skapa Garmin-nyckeln.** Gå till **Inställningar → Personal API token** i Garmin Connect ([direktlänk](https://connect.garmin.com/app/settings/personalApiToken)) och skapa en nyckel. Håll den hemlig.
 2. **Klicka på "Deploy to Cloudflare"** ovan. Logga in på Cloudflare och GitHub när du blir ombedd. Fyll sedan i:
+   - **Git account:** välj ditt GitHub-konto och kryssa i **Create private Git repository**
    - `GARMIN_PERSONAL_API_KEY`: nyckeln från steg 1
    - `LOGIN_PASSWORD`: ett **nytt**, långt lösenord som du hittar på nu (minst 20 tecken). Spara det i din lösenordshanterare.
    - Låt resten vara som det är och klicka på **Deploy**.
