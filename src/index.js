@@ -68,7 +68,10 @@ const defaultHandler = {
     }
     if (url.pathname === "/authorize" && request.method === "POST") {
       const form = await request.formData();
-      const ok = env.LOGIN_PASSWORD && (await sameSecret(String(form.get("password") ?? ""), env.LOGIN_PASSWORD));
+      const pw = env.LOGIN_PASSWORD ?? "";
+      const weak = pw.length < 12 || /^(a-long-password|your-|changeme|password)/i.test(pw);
+      if (weak) return page(`<h2>Setup not finished</h2><p>LOGIN_PASSWORD is missing, too short or still the example value. Set a new long password in Cloudflare → your Worker → Settings → Variables and Secrets, then try again.</p>`, new Headers(), 503);
+      const ok = await sameSecret(String(form.get("password") ?? ""), pw);
       const handle = String(form.get("handle") ?? "");
       if (!ok) {
         await new Promise((r) => setTimeout(r, 1500)); // slow down guessing

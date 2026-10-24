@@ -1,2 +1,4 @@
-GARMIN_PERSONAL_API_KEY=your-garmin-personal-api-key # From Garmin Connect → Settings → Personal API token
-LOGIN_PASSWORD=a-long-password-you-invent # Typed once when connecting Claude
+# Garmin Personal API key (Garmin Connect -> Settings -> Personal API token)
+GARMIN_PERSONAL_API_KEY=
+# A new long password you invent (20+ characters), typed once when connecting Claude
+LOGIN_PASSWORD=
